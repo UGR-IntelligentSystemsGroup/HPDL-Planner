@@ -1,4 +1,4 @@
-# Siadex_Planner
+# HPDL-Planner
 
 Fdez-Olivares, J., Castillo, L., García-Pérez, Ó., and Palao, F. (2006). Bringing Users and Planning Technology Together. Experiences in SIADEX. pages 11–20.
 
