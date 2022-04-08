@@ -1,6 +1,9 @@
 # HPDL-Planner
 
-Fdez-Olivares, J., Castillo, L., García-Pérez, Ó., and Palao, F. (2006). Bringing Users and Planning Technology Together. Experiences in SIADEX. pages 11–20.
+HPDL-Planner is a Hierarchical Task Network planner supporting partial order compound tasks, temporal and numeric planning.
+You can read more about the planner [here](https://www.aaai.org/Papers/ICAPS/2006/ICAPS06-007.pdf).
+
+The language used by the planner is HPDL, but you can also use the [pandaPIparser](https://github.com/panda-planner-dev/pandaPIparser) to transform from HDDL domains and problems.
 
 ## Installation
 
@@ -33,3 +36,15 @@ See:
 ```$ ./planner --help``` 
 
 for more information.
+
+## Citation
+
+If you would like to cite this planner in an scientific publication, please refer to this [paper](https://www.aaai.org/Papers/ICAPS/2006/ICAPS06-007.pdf):
+
+```bibtex
+@inproceedings{fdez2006bringing,
+  title={Bringing users and planning technology together. Experiences in SIADEX},
+  author={Fdez-Olivares, Juan and Castillo, Luis and Garc{\i}a-P{\'e}rez, Oscar and Palao, Francisco},
+  year={2006}
+}
+```
