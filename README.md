@@ -1,6 +1,6 @@
 # HPDL-Planner
 
-HPDL-Planner is a Hierarchical Task Network planner supporting partial order compound tasks, temporal and numeric planning.
+HPDL-Planner (also known as SIADEX) is a Hierarchical Task Network planner supporting partial order compound tasks, temporal and numeric planning.
 You can read more about the planner [here](https://www.aaai.org/Papers/ICAPS/2006/ICAPS06-007.pdf).
 
 The language used by the planner is HPDL, but you can also use the [pandaPIparser](https://github.com/panda-planner-dev/pandaPIparser) to transform from HDDL domains and problems.
