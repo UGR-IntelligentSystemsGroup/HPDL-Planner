@@ -56,7 +56,7 @@ void MyLexer::initErrorTable()
     dictionary["PDDL_STRIPS"] = "`:strips'";
     dictionary["PDDL_TYPING"] = "`:typing'";
     dictionary["PDDL_NEGATIVE_PRECONDITIONS"] = "`:negative-preconditions'";
-    dictionary["PDDL_DISJUNTIVE_PRECONDITIONS"] = "`:disjuntive-preconditions'";
+    dictionary["PDDL_DISJUNCTIVE_PRECONDITIONS"] = "`:disjunctive-preconditions'";
     dictionary["PDDL_EQUALITY"] = "`:equality'";
     dictionary["PDDL_EXISTENTIAL_PRECONDITIONS"] = "`:existential-preconditions'";
     dictionary["PDDL_UNIVERSAL_PRECONDITIONS"] = "`:universal-preconditions'";
@@ -299,7 +299,7 @@ oacute            {cerr << "se encontro o" <<endl;}
 ":strips"                       {return PDDL_STRIPS;}
 ":typing"                       {return PDDL_TYPING;}
 ":negative-preconditions"       {return PDDL_NEGATIVE_PRECONDITIONS;}
-":disjuntive-preconditions"     {return PDDL_DISJUNTIVE_PRECONDITIONS;}
+":disjunctive-preconditions"     {return PDDL_DISJUNCTIVE_PRECONDITIONS;}
 ":equality"                     {return PDDL_EQUALITY;}
 ":existential-preconditions"    {return PDDL_EXISTENTIAL_PRECONDITIONS;}
 ":universal-preconditions"      {return PDDL_UNIVERSAL_PRECONDITIONS;}

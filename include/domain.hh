@@ -271,7 +271,7 @@ class Domain
 	/** flag vars for avoid to show repeat error msg */
 	bool errtyping;
 	bool errfluents;
-	bool errdisjuntive;
+	bool errdisjunctive;
 	bool errexistential;
 	bool erruniversal;
 	bool errnegative;

@@ -39,7 +39,7 @@ Domain::~Domain()
 Domain::Domain(void) {
     errtyping = false;
     errfluents = false;
-    errdisjuntive = false;
+    errdisjunctive = false;
     errexistential = false;
     erruniversal = false;
     errnegative = false;
@@ -63,7 +63,7 @@ Domain::Domain(const char * n)
 :name(n) {
     errtyping = false;
     errfluents = false;
-    errdisjuntive = false;
+    errdisjunctive = false;
     errexistential = false;
     erruniversal = false;
     errnegative = false;
@@ -337,7 +337,7 @@ bool Domain::hasRequirement(const char * requirement)
         return true;
     if(strcmp(requirement,":negative-preconditions") == 0 && (hasRequirement(":adl") || hasRequirement(":quantified-preconditions")))
         return true;
-    if(strcmp(requirement,":disjuntive-preconditions") == 0 && (hasRequirement(":adl") || hasRequirement(":quantified-preconditions")))
+    if(strcmp(requirement,":disjunctive-preconditions") == 0 && (hasRequirement(":adl") || hasRequirement(":quantified-preconditions")))
         return true;
     if(strcmp(requirement,":equality") == 0 && hasRequirement(":adl"))
         return true;

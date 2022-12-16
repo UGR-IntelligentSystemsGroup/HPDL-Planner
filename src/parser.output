@@ -51,7 +51,7 @@ Grammar
    31 require_key: PDDL_STRIPS
    32            | PDDL_TYPING
    33            | PDDL_NEGATIVE_PRECONDITIONS
-   34            | PDDL_DISJUNTIVE_PRECONDITIONS
+   34            | PDDL_DISJUNCTIVE_PRECONDITIONS
    35            | PDDL_EQUALITY
    36            | PDDL_EXISTENTIAL_PRECONDITIONS
    37            | PDDL_UNIVERSAL_PRECONDITIONS
@@ -678,7 +678,7 @@ PDDL_EITHER (273) 61
 PDDL_STRIPS (274) 31
 PDDL_TYPING (275) 32
 PDDL_NEGATIVE_PRECONDITIONS (276) 33
-PDDL_DISJUNTIVE_PRECONDITIONS (277) 34
+PDDL_DISJUNCTIVE_PRECONDITIONS (277) 34
 PDDL_EQUALITY (278) 35
 PDDL_EXISTENTIAL_PRECONDITIONS (279) 36
 PDDL_UNIVERSAL_PRECONDITIONS (280) 37
@@ -2489,7 +2489,7 @@ State 127
     PDDL_STRIPS                     shift, and go to state 194
     PDDL_TYPING                     shift, and go to state 195
     PDDL_NEGATIVE_PRECONDITIONS     shift, and go to state 196
-    PDDL_DISJUNTIVE_PRECONDITIONS   shift, and go to state 197
+    PDDL_DISJUNCTIVE_PRECONDITIONS   shift, and go to state 197
     PDDL_EQUALITY                   shift, and go to state 198
     PDDL_EXISTENTIAL_PRECONDITIONS  shift, and go to state 199
     PDDL_UNIVERSAL_PRECONDITIONS    shift, and go to state 200
@@ -3238,7 +3238,7 @@ State 196
 
 State 197
 
-   34 require_key: PDDL_DISJUNTIVE_PRECONDITIONS .
+   34 require_key: PDDL_DISJUNCTIVE_PRECONDITIONS .
 
     $default  reduce using rule 34 (require_key)
 
@@ -3335,7 +3335,7 @@ State 210
     PDDL_STRIPS                     shift, and go to state 194
     PDDL_TYPING                     shift, and go to state 195
     PDDL_NEGATIVE_PRECONDITIONS     shift, and go to state 196
-    PDDL_DISJUNTIVE_PRECONDITIONS   shift, and go to state 197
+    PDDL_DISJUNCTIVE_PRECONDITIONS   shift, and go to state 197
     PDDL_EQUALITY                   shift, and go to state 198
     PDDL_EXISTENTIAL_PRECONDITIONS  shift, and go to state 199
     PDDL_UNIVERSAL_PRECONDITIONS    shift, and go to state 200
@@ -4162,7 +4162,7 @@ State 302
     PDDL_STRIPS                     shift, and go to state 194
     PDDL_TYPING                     shift, and go to state 195
     PDDL_NEGATIVE_PRECONDITIONS     shift, and go to state 196
-    PDDL_DISJUNTIVE_PRECONDITIONS   shift, and go to state 197
+    PDDL_DISJUNCTIVE_PRECONDITIONS   shift, and go to state 197
     PDDL_EQUALITY                   shift, and go to state 198
     PDDL_EXISTENTIAL_PRECONDITIONS  shift, and go to state 199
     PDDL_UNIVERSAL_PRECONDITIONS    shift, and go to state 200

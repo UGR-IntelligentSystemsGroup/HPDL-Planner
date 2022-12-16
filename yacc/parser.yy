@@ -230,7 +230,7 @@ struct TestType {
 %token PDDL_STRIPS
 %token PDDL_TYPING
 %token PDDL_NEGATIVE_PRECONDITIONS
-%token PDDL_DISJUNTIVE_PRECONDITIONS
+%token PDDL_DISJUNCTIVE_PRECONDITIONS
 %token PDDL_EQUALITY
 %token PDDL_EXISTENTIAL_PRECONDITIONS
 %token PDDL_UNIVERSAL_PRECONDITIONS
@@ -565,8 +565,8 @@ require_key:                    PDDL_STRIPS
                                 { parser_api->domain->addRequirement(":typing");}
                                 |PDDL_NEGATIVE_PRECONDITIONS
                                 { parser_api->domain->addRequirement(":negative-preconditions");}
-                                |PDDL_DISJUNTIVE_PRECONDITIONS
-                                { parser_api->domain->addRequirement(":disjuntive-preconditions");}
+                                |PDDL_DISJUNCTIVE_PRECONDITIONS
+                                { parser_api->domain->addRequirement(":disjunctive-preconditions");}
                                 |PDDL_EQUALITY
                                 { parser_api->domain->addRequirement(":equality");}
                                 |PDDL_EXISTENTIAL_PRECONDITIONS
@@ -1923,10 +1923,10 @@ simple_goal_def:                LEFTPAR PDDL_AND
                                 | LEFTPAR PDDL_IMPLY goal_def goal_def RIGHTPAR
                                 {
                                 $$ = new ImplyGoal((Goal *) $3, (Goal *) $4);
-                                    if(!parser_api->domain->errdisjuntive && !parser_api->domain->hasRequirement(":disjuntive-preconditions"))
+                                    if(!parser_api->domain->errdisjunctive && !parser_api->domain->hasRequirement(":disjunctive-preconditions"))
                                     {
-                                        parser_api->domain->errdisjuntive = true;
-                                        yyerror("Using a clause that requires `:disjuntive-preconditions' and is not declared in requirements clause");
+                                        parser_api->domain->errdisjunctive = true;
+                                        yyerror("Using a clause that requires `:disjunctive-preconditions' and is not declared in requirements clause");
                                     }
                                 }
                                 | LEFTPAR PDDL_EXISTS
