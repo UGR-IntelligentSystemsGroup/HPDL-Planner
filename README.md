@@ -37,6 +37,8 @@ See:
 
 for more information.
 
+With the script ``format_output.py`` you can get a decomposition tree of the resulting plan.
+
 ## Citation
 
 If you would like to cite this planner in an scientific publication, please refer to this [paper](https://www.aaai.org/Papers/ICAPS/2006/ICAPS06-007.pdf):
