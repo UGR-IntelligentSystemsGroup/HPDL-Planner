@@ -42,6 +42,9 @@ class Plan{
     /** Controla los mensajes de depuraci�n que el planificador desplega por pantalla */
     int FLAG_VERBOSE;
 
+    // Prints decomposition tree
+    bool FLAG_TREE;
+
     // ----------------------------------------------------------------------
     // Funciones
     // ----------------------------------------------------------------------
@@ -256,6 +259,7 @@ class Plan{
     /** pila de llamadas "recursivas", mantiene el estado del planificador
     a lo largo de la ejecucion en cada uno de los nodos del �rbol de b�squeda. */
     vector<StackNode *> stack;
+    vector<StackNode *> stack_copy; // For the decomposition tree
 
     /** Estructura para mantener la red de restricciones temporales */
     STP * stp;

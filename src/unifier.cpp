@@ -161,6 +161,11 @@ void Unifier::print(ostream * os, int indent) const
     }
 };
 
+void Unifier::printUnifications(ostream * os, int indent) const
+{
+    for_each(substitutions.begin(),substitutions.end(),PrintSub(os,indent));
+};
+
 struct ApplyTypeSubstitution{
     VUndo * undo;
     ApplyTypeSubstitution(VUndo *u) {undo = u;};

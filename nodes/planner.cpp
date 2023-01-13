@@ -84,6 +84,8 @@ int main(int argc, char *argv[]){
     //yydebug=1;
     int seed = -1;
 
+    bool FLAG_TREE = false;
+
     // ----------------------------------------------------
     // Captura de los par�metros desde la l�nea de �rdenes.
     // ----------------------------------------------------
@@ -92,7 +94,7 @@ int main(int argc, char *argv[]){
     int siguiente_opcion;
 
     // Una cadena que lista las opciones cortas v�lidas 
-    const char* const op_cortas = "hv::gd:p:o:x:" ;
+    const char* const op_cortas = "hv::gd:p:o:x:t" ;
 
     // El indice a la opcion
     int option_index;
@@ -102,6 +104,7 @@ int main(int argc, char *argv[]){
     {
         {"help",	    no_argument,	    0,   'h'},
         {"verbose",	    optional_argument,	    0,   'v'},
+        {"tree",	    no_argument,	    0,   't'},
         {"debug",	    no_argument,	    0,   'g'},
         {"domain_file",	    required_argument,	    0,   'd'},
         {"problem_file",    required_argument,	    0,   'p'},
@@ -140,6 +143,11 @@ int main(int argc, char *argv[]){
                     *errflow << "Invalid verbosity level (" << optarg << "), setting to default." << endl;
                     verbosity = 2 ;
                 }
+                break;
+
+            case 't' : /* -t o --tree */
+                // print decomposition tree
+                FLAG_TREE = true;
                 break;
 
             case 'g' : /* -g o --debug */
@@ -273,6 +281,7 @@ int main(int argc, char *argv[]){
             plan->FLAG_DEPTH_LIMIT = dlimit;
             plan->FLAG_TLIMIT = tlimit;
             plan->FLAG_VERBOSE = verbosity;
+            plan->FLAG_TREE = FLAG_TREE;
 
             check_key();
             plan->solve();

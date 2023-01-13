@@ -351,13 +351,14 @@ public:
 
   const vector<TCTR> * getTConstraints(int index) const;
 
-protected:
   /**
    * Lista de tareas que forman parte de la red de tareas.
    * Las tareas que aparecen en esta lista no tienen porque estar siendo usadas
    * actualmente en la red de tareas. Pueden haber sido sustituidas en un paso
    * previo, en ese caso aparecer�n marcadas como inv�lidas. */
   TaskList tasklist;
+  
+protected:
   /**
    * Este vector mantiene los �ndices de los sucesores de la tarea i-esima.
    * Los �ndices no coinciden exactamente con los usados en TaskNetwork::tasklist.
