@@ -111,27 +111,118 @@ void Plan::init(void) {
 ;
 
 void Plan::printStatistics(ostream * flow) const {
-    *flow
-        << "-----------------------------------------------------------------"
-        << endl;
-    *flow << "Number of actions: " << getNumberOfActions() << " ("
-        << plan.size() << ")" << endl;
-    *flow << "Expansions: " << eCounter << endl;
-    *flow << "Generated nodes: " << nodeCounter << endl;
-    *flow << "Inferences: " << mCounter << endl;
-    *flow << "Time in seconds: " << (float) ((TEND - TSTART) * 1.0)
-        / (CLOCKS_PER_SEC * 1.0) << endl;
-    *flow << c1.Description() << ": " << c1.Time() << endl;
-    *flow << c2.Description() << ": " << c2.Time() << endl;
-    *flow << c3.Description() << ": " << c3.Time() << endl;
-#ifdef __tcnm_pc2_cl
-    cerr << "Cortados: " << cortados << endl;
-    cerr << "Directos: " << directos << endl;
-    cerr << "CL: " << CL << endl;
-#endif
-    *flow
-        << "-----------------------------------------------------------------"
-        << endl;
+//     *flow
+//         << "-----------------------------------------------------------------"
+//         << endl;
+//     *flow << "Number of actions: " << getNumberOfActions() << " ("
+//         << plan.size() << ")" << endl;
+//     *flow << "Expansions: " << eCounter << endl;
+//     *flow << "Generated nodes: " << nodeCounter << endl;
+//     *flow << "Inferences: " << mCounter << endl;
+//     *flow << "Time in seconds: " << (float) ((TEND - TSTART) * 1.0)
+//         / (CLOCKS_PER_SEC * 1.0) << endl;
+//     *flow << c1.Description() << ": " << c1.Time() << endl;
+//     *flow << c2.Description() << ": " << c2.Time() << endl;
+//     *flow << c3.Description() << ": " << c3.Time() << endl;
+// #ifdef __tcnm_pc2_cl
+//     cerr << "Cortados: " << cortados << endl;
+//     cerr << "Directos: " << directos << endl;
+//     cerr << "CL: " << CL << endl;
+// #endif
+//     *flow
+//         << "-----------------------------------------------------------------"
+//         << endl;
+
+    // // MODIFICACION ------------------------------------------------------------
+    // // Red de tareas
+    // *flow
+    //     << "Red de tareas" << endl
+    //     << "-----------------------------------------------------------------"
+    //     << endl;
+    // tasknetwork->printDebug(flow);
+
+    // *flow
+    //     << "-----------------------------------------------------------------"
+    //     << endl;
+
+    // // Red de tareas
+    // *flow
+    //     << "Red de tareas - 2" << endl
+    //     << "-----------------------------------------------------------------"
+    //     << endl;
+
+    // int counter=0;
+    // for(tasklistcit i = getTaskNetwork()->getBeginTask(); i!= getTaskNetwork()->getEndTask(); i++)
+    // {
+    //     if((*i)->isTaskHeader())
+    //     {
+    //         *flow << "n" << counter << "[label=\"" << (*i)->getName() << "\",color=red]" << endl;
+    //     }
+    //     else if((*i)->isPrimitiveTask())
+    //     {
+    //         *flow << "n" << counter << "[label=\"" << (*i)->getName() << "\",color=green,shape=box]" << endl;
+    //     }
+    //     counter++;
+    // }
+
+    // int size = getTaskNetwork()->getNumOfNodes();
+    // for(int k =0; k<size; k++)
+    //     for(int j =0; j<size; j++)
+    //     {
+    //         if( getTaskNetwork()->inmediatelyAfter(k,j))
+    //             *flow << "n" << k << "->" << "n" << j << endl;
+    //     }
+
+    // for(int k =0; k<size; k++)
+    //     for(int j =0; j<size; j++)
+    //     {
+    //         if( getTaskNetwork()->inmediatelyBefore(k,j))
+    //             *flow << "n" << k << "<-" << "n" << j << endl;
+    //     }
+
+    // *flow << "}";
+
+    // *flow
+    //     << "-----------------------------------------------------------------"
+    //     << endl;
+
+    // // Tabla de vínculos causuales
+    // *flow
+    //     << "Tabla de vínculos causales" << endl
+    //     << "-----------------------------------------------------------------"
+    //     << endl;
+
+    // causalTable.plot(flow);
+
+    // *flow
+    //     << "-----------------------------------------------------------------"
+    //     << endl;
+
+    // // Nodos hoja del arbol de expansión
+    // *flow
+    //     << "Número de nodos hoja del árbol de expansión" << endl
+    //     << "-----------------------------------------------------------------"
+    //     << endl;
+
+    // ExpansionTree * etree = new ExpansionTree(&plan, tasknetwork);
+    // *flow << etree->getNumberOfRoots() << endl;
+
+    // *flow
+    //     << "-----------------------------------------------------------------"
+    //     << endl;
+
+    // // Matriz de adyacencia
+    // *flow
+    //     << "Matriz de adyacencia" << endl
+    //     << "-----------------------------------------------------------------"
+    //     << endl;
+
+    // TaskNetwork * task = getTaskNetwork()->clone();
+    // task->print(flow);
+
+    // *flow
+    //     << "-----------------------------------------------------------------"
+    //     << endl;
 }
 
 int Plan::deleteFromState(int id, const KeyList * params) {
@@ -278,6 +369,57 @@ bool Plan::solve(void) {
         plan.clear();
         return false;
     } else {
+        // For the Decomposition Tree
+        for (int i=0; i<stack_copy.size(); i++) {
+            int mpos = stack_copy.at(i)->mpos;
+            int explored_size = stack_copy.at(i)->explored.size();
+
+            // Sigue habiendo tareas-basura al final, se puede comprobar con explored            
+            if (explored_size > 0) {
+                if (FLAG_TREE) {
+                    *errflow << "\n===" << endl;
+
+                    *errflow 
+                        << "Tarea:"
+                        << stack_copy.at(i)->explored.at(explored_size-1).first
+                        << endl;
+                }
+                    
+                // Si no es una primitiva
+                if (FLAG_TREE) {
+                    if (mpos != -1) {    
+                        *errflow << endl;
+                        stack_copy.at(i)->methods->at(mpos)->print(errflow);
+                    }
+                }
+            }
+        }        
+
+        if (FLAG_TREE) {
+            *errflow << "\n===" << endl;
+            for (int i=0; i<stack_copy.size(); i++) {
+                int mpos = stack_copy.at(i)->mpos;
+                int explored_size = stack_copy.at(i)->explored.size();
+
+                // Sigue habiendo tareas-basura al final, se puede comprobar con explored            
+                if (explored_size > 0) {
+                    // Si existen unificaciones (>=)
+                    if (stack_copy.at(i)->unif >= 0) {
+                        Unifier * uf = stack_copy.at(i)->utable->getUnifierAt(stack_copy.at(i)->unif);
+                        vSubstitutions substitutions = uf->substitutions;
+                        
+                        if (substitutions.size() > 0) {
+                            uf->printUnifications(&*errflow);
+                        }
+                    }
+                }
+            }
+            *errflow << "===" << endl;
+        
+            tasknetwork->printDebug(errflow);
+            *errflow << "###" << endl;
+        }
+
         c1.Stop();
         c2.Stop();
         c3.Stop();
@@ -292,6 +434,17 @@ bool Plan::mainLoop(void) {
     // tasknetwork->print(&cerr);
     // tasknetwork->printDebug(&cerr);
     // exit(EXIT_FAILURE);
+
+    // IDs de tareas root
+    if (FLAG_TREE) {
+        *errflow << "Root:";
+        for (int j = 0; j != (int) tasknetwork->tasklist.size(); j++) {
+            *errflow << j << "-";
+        }
+    }
+
+    // MODIFICACION
+    stack_copy = stack;    
 
     while (!stack.empty()) {
         if (FLAG_EXPANSIONS_LIMIT > 0 && nodeCounter >= FLAG_EXPANSIONS_LIMIT) {
@@ -310,7 +463,13 @@ bool Plan::mainLoop(void) {
             // contexto. Se deshacen los cambios, y se vuelve al contexto
             // anterior.
             next = stack.back();
+            // For the decomposition tree
+            stack_copy.back();
+            
             stack.pop_back();
+            // For the decomposition tree
+            stack_copy.pop_back();
+
             if (stack.empty()) {
                 //delete next;
                 *errflow << "\n[Error]: Empty stack\n";
@@ -331,6 +490,8 @@ bool Plan::mainLoop(void) {
         } else {
             // En otro caso se ha generado un nuevo contexto
             stack.push_back(next);
+            // For the decomposition tree
+            stack_copy.push_back(next);
             // Si en el siguiente contexto no hay tareas pendientes
             // significa que hemos alcanzado la condicion de fin
             if (next->agenda.empty()) {

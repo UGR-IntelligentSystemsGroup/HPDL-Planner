@@ -167,6 +167,7 @@ class Unifier
 	 * @param indent la indentaci�n a usar
 	 */
 	void print(ostream * os, int indent=0) const;
+	void printUnifications(ostream * os, int indent=0) const;
 
 	/**
 	 * Aplica todas las sustituciones pendientes.
@@ -220,9 +221,9 @@ class Unifier
 	 */
 	bool equal(const Unifier * other) const;
 
-    protected:
 	/** Estructura para almacenar las substituciones de variable por t�rmino */
 	vSubstitutions substitutions;
+    protected:
 	/** Vector para almacenar en el caso de que se produzcan, sustituciones de tipos */
 	vTSubstitutions * typeSubstitutions;
 	/** Tabla de v�nculos causales consumidos durante la unificaci�n */

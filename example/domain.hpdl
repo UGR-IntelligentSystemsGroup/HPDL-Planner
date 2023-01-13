@@ -1,0 +1,163 @@
+(define (domain bloques)
+  (:requirements :typing :fluents :derived-predicates :negative-preconditions :htn-expansion)
+
+  (:types
+    bloque superficie - object
+  )
+
+  (:constants
+    mesa - superficie
+  )
+
+  (:predicates
+    (manovacia)
+    (libre ?x - bloque)
+    (cogido ?x - bloque)
+    (sobremesa ?x - bloque)
+    (sobre ?x ?y - bloque)
+    (distinto ?x ?y)
+  )
+
+  (:functions
+    (igual ?x ?y) {
+      return ?x == ?y
+    }
+  )
+
+  ;; Regla para "derivar" (determinar) si dos variables son distintas.
+  ;; Las reglas de este tipo se corresponden con la estructura 
+  ;; (:derived <consecuente> <condición>)
+  ;; <consecuente> debe ser un único predicado
+  ;; <condición> debe ser una expresión lógica
+  ;; la interpretación de estas reglas es como sigue:
+  ;; si en el estado actual <condicion> es cierta, entonces <consecuente> es cierto
+  ;; Es utilizada de forma general para representar con un sólo predicado una 
+  ;; condición o cálculo complejo
+
+  (:derived
+    (distinto ?x ?y)
+    (>= 0 (igual ?x ?y))
+  )
+
+  (:task sobre
+    :parameters (?x ?y)
+    (:method poner_encima
+      :precondition () ; vacío
+      :tasks
+      (
+        (limpiar ?x)
+        (limpiar ?y)
+        (colocar ?x ?y)
+      )
+    )
+  )
+
+  (:task limpiar
+    :parameters (?x)
+    (:method limpiar_mesa
+      :precondition (< 0 (igual ?x mesa))
+      :tasks()
+    ) 
+    (:method limpiar_ocupado
+      :precondition (and (sobre ?y ?x))
+      :tasks
+      (
+        (limpiar ?y)
+        (colocar ?y mesa)
+      )
+    )
+    (:method limpiar_libre
+      :precondition (libre ?x)
+      :tasks
+      ()
+    ) 
+  )
+
+  (:task colocar
+    :parameters (?x ?y) (:method colocar
+      :precondition ()
+      :tasks
+      (
+        (primero-coge ?x)
+        (despues-deja ?x ?y)
+      )
+    )
+  )
+
+  (:task primero-coge
+    :parameters (?x - bloque) 
+    (:method cogelo_de_la_mesa
+      :precondition (and (sobremesa ?x))
+      :tasks (
+        (coger ?x)
+      )
+    )
+    (:method cogelo_de_la_pila
+      :precondition (sobre ?x ?y)
+      :tasks (
+        (desapilar ?x ?y)
+      )
+    )
+  )
+
+  (:task despues-deja
+    :parameters (?x - bloque ?y - object) 
+    (:method dejalo_en_la_mesa
+      :precondition (and (< 0 (igual ?y mesa)))
+      :tasks (
+        (dejar ?x)
+      )
+    )
+    (:method dejalo_en_la_pila
+      :precondition (distinto ?y mesa)
+      :tasks (
+        (apilar ?x ?y)
+      )
+    )
+  )
+
+  (:action coger
+    :parameters (?x - bloque)
+    :precondition (and (sobremesa ?x)(libre ?x)(manovacia))
+    :effect (and 
+      (not (sobremesa ?x))
+      (not (libre ?x))
+      (not (manovacia))
+      (cogido ?x))
+  )
+
+  (:action dejar
+    :parameters (?x - bloque)
+    :precondition (and (cogido ?x))
+    :effect (and 
+      (sobremesa ?x)
+      (libre ?x)
+      (manovacia)
+      (not (cogido ?x))
+    )
+  )
+
+  (:action apilar
+    :parameters (?x ?y - bloque)
+    :precondition (and (cogido ?x)(libre ?y))
+    :effect (and 
+      (not (cogido ?x))
+      (not (libre ?y))
+      (libre ?x)
+      (sobre ?x ?y)
+      (manovacia)
+    )
+  )
+
+  (:action desapilar
+    :parameters (?x ?y - bloque)
+    :precondition (and (manovacia) (libre ?x) (sobre ?x ?y))
+    :effect (and
+      (cogido ?x)
+      (libre ?y)
+      (not (libre ?x))
+      (not (sobre ?x ?y))
+      (not (manovacia))
+    )
+  )
+)

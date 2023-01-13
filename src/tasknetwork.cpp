@@ -761,11 +761,11 @@ void TaskNetwork::print(ostream * out, int nindent) {
 }
 
 void TaskNetwork::printDebug(ostream * out) const {
-    *out << "Sucesores: " << endl;
-    printTable(out, &(succ));
+    // *out << "Sucesores: " << endl;
+    // printTable(out, &(succ));
 
-    *out << "Predecesores: " << endl;
-    printTable(out, &pred);
+    // *out << "Predecesores: " << endl;
+    // printTable(out, &pred);
 
     *out << "Lista de tareas: " << endl;
     for (int j = 0; j != (int) tasklist.size(); j++) {
@@ -775,30 +775,30 @@ void TaskNetwork::printDebug(ostream * out) const {
         tasklist[j]->printHead(out);
     }
 
-    *out << "Invalidados: " << endl;
-    for (int j = 0; j < (int) invalid.size(); j++)
-        *out << invalid[j] << " ";
-    *out << endl;
+    // *out << "Invalidados: " << endl;
+    // for (int j = 0; j < (int) invalid.size(); j++)
+    //     *out << invalid[j] << " ";
+    // *out << endl;
 
-    *out << "Vector backtracking: " << endl;
-    for (int j = 0; j < (int) backtracking.size(); j++)
-        *out << backtracking[j] << " ";
-    *out << endl;
+    // *out << "Vector backtracking: " << endl;
+    // for (int j = 0; j < (int) backtracking.size(); j++)
+    //     *out << backtracking[j] << " ";
+    // *out << endl;
 
-    *out << "Restricciones: " << endl;
-    vector<TCTR>::const_iterator b;
-    int j = 0;
-    struct PrintCT pct(out, 0);
-    for (b = tconstraints.begin(); b != tconstraints.end(); b++) {
-        *out << "+++ " << j++ << endl;
-        pct(*b);
-    }
+    // *out << "Restricciones: " << endl;
+    // vector<TCTR>::const_iterator b;
+    // int j = 0;
+    // struct PrintCT pct(out, 0);
+    // for (b = tconstraints.begin(); b != tconstraints.end(); b++) {
+    //     *out << "+++ " << j++ << endl;
+    //     pct(*b);
+    // }
 
-    for (j = 0; j < (int) constraintref.size(); j++) {
-        *out << "---> " << j << endl;
-        for_each(constraintref[j]->begin(), constraintref[j]->end(),
-                Print<int> (out));
-    }
+    // for (j = 0; j < (int) constraintref.size(); j++) {
+    //     *out << "---> " << j << endl;
+    //     for_each(constraintref[j]->begin(), constraintref[j]->end(),
+    //             Print<int> (out));
+    // }
 
 }
 
