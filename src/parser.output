@@ -646,569 +646,743 @@ Grammar
 
 Terminals, with rules where they appear
 
-$end (0) 0
-error (256) 21 23 26 30 55 63 74 77 98 328
-LEFTPAR (258) 4 5 22 24 25 27 48 49 61 69 73 76 83 87 101 103 105 106
-    107 108 109 110 111 113 114 115 116 117 118 119 120 121 122 126
-    127 128 129 135 137 141 143 146 148 150 152 159 160 165 166 169
-    171 172 173 175 180 183 184 185 188 191 194 204 206 208 222 230
-    231 245 247 250 252 254 257 258 263 264 269 286 287 289 291 292
-    297 298 300 302 306 310 311 322 416 417 422 423 424 425 426 427
-RIGHTPAR (259) 4 20 22 24 25 27 48 49 61 69 73 76 83 87 101 103 105
-    106 107 108 109 110 111 113 114 115 116 117 118 119 120 121 122
-    126 127 128 129 135 137 141 143 146 148 150 152 159 160 165 166
-    169 171 172 173 175 180 183 184 185 188 191 194 204 206 208 222
-    230 231 245 247 250 252 254 257 258 263 264 269 286 287 289 291
-    292 297 298 300 302 306 310 311 322 416 417 422 423 424 425 426
-    427
-PDDL_DEFINE (260) 4 5
-PDDL_DOMAIN (261) 22
-PDDL_DOMAINREF (262) 25
-PDDL_PROBLEM (263) 24
-PDDL_CONSTANTS (264) 49
-PDDL_NAME (265) 47 59 60 64 65 141 405
-PDDL_VAR (266) 217
-PYTHON_CODE (267) 91
-PDDL_NUMBER (268) 215
-PDDL_DNUMBER (269) 216 344 381 385 393 398 399 400 424 425 426
-PDDL_REQUIREMENTS (270) 27
-PDDL_TYPES (271) 48
-PDDL_HYPHEN (272) 54 58 82 89 213 237
-PDDL_EITHER (273) 61
-PDDL_STRIPS (274) 31
-PDDL_TYPING (275) 32
-PDDL_NEGATIVE_PRECONDITIONS (276) 33
-PDDL_DISJUNCTIVE_PRECONDITIONS (277) 34
-PDDL_EQUALITY (278) 35
-PDDL_EXISTENTIAL_PRECONDITIONS (279) 36
-PDDL_UNIVERSAL_PRECONDITIONS (280) 37
-PDDL_QUANTIFIED_PRECONDITIONS (281) 38
-PDDL_CONDITIONAL_EFFECTS (282) 39
-PDDL_FLUENTS (283) 40
-PDDL_ADL (284) 41
-PDDL_DURATIVE_ACTIONS (285) 42
-PDDL_DERIVED_PREDICATES (286) 43
-PDDL_TIMED_INITIAL_LITERALS (287) 44
-PDDL_PREDICATES (288) 69
-PDDL_FUNCTIONS (289) 83
-PDDL_ACTION (290) 101
-PDDL_PARAMETERS (291) 101 103 306
-PDDL_NOT (292) 184 264 300
-PDDL_PRECONDITION (293) 164
-PDDL_IMPLY (294) 185
-PDDL_AND (295) 105 180 252 269 292 310 314
-PDDL_OR (296) 183
-PDDL_EXISTS (297) 188
-PDDL_FORALL (298) 191 257
-PLUS (299) 240
-DIVIDE (300) 242
-MULTIPLY (301) 241
-POW (302) 243
-ABS (303) 238
-SQRT (304) 239
-GREATHER (305) 111 117 122 157 158 223
-LESS (306) 110 116 121 157 158 224
-EQUAL (307) 107 113 118 225 289 387 389 391 393 422 423 424 425 426
-DISTINCT (308) 228
-GREATHER_EQUAL (309) 109 115 120 226
-LESS_EQUAL (310) 108 114 119 227
-PDDL_EFFECT (311) 249 306
-PDDL_ASSIGN (312) 271
-PDDL_SCALE_UP (313) 272
-PDDL_SCALE_DOWN (314) 273
-PDDL_INCREASE (315) 274
-PDDL_DECREASE (316) 275
-PDDL_WHEN (317) 258
-PDDL_GOAL (318) 297
-PDDL_AT (319) 320
-PDDL_ATSTART (320) 315
-PDDL_ATEND (321) 316
-PDDL_BETWEEN (322) 292 314
-PDDL_OBJECT (323) 286
-PDDL_INIT (324) 287
-PDDL_OVERALL (325) 313
-PDDL_DURATIONVAR (326) 107 108 109 110 111 218
-STARTVAR (327) 113 114 115 116 117 219
-ENDVAR (328) 118 119 120 121 122 220
-PDDL_DERIVED (329) 322
-PDDL_CONDITION (330) 306
-PDDL_DURATION (331) 306
-PDDL_DURATIVE_ACTION (332) 306
-HTN_EXPANSION (333) 46
-META_TAGS (334) 45
-META (335) 137
-TAG (336) 141
-HTN_TASK (337) 103
-HTN_TASKS (338) 135 298
-HTN_ACHIEVE (339) 143
-HTN_METHOD (340) 135
-HTN_TASKSGOAL (341) 298
-HTN_INLINE (342) 146
-HTN_INLINECUT (343) 148
-HTN_TEXT (344) 141 173 423
-LEFTBRAC (345) 161 162
-RIGHTBRAC (346) 161 162
-EXCLAMATION (347) 126 127 128 156 166
-RANDOM (348) 127 128 129
-SORTBY (349) 169
-ASC (350) 196
-DESC (351) 197
-PDDL_BIND (352) 171
-MAINTAIN (353) 204
-PPRINT (354) 172 173 175
-PDDL_AND_EVERY (355) 293
-CUSTOMIZATION (356) 417
-TIMEUNIT (357) 422
-TIMESTART (358) 426
-TIMEFORMAT (359) 423
-TIMEHORIZON (360) 424
-RELTIMEHORIZON (361) 425
-THOURS (362) 428
-TMINUTES (363) 429
-TSECONDS (364) 430
-TDAYS (365) 431
-TMONTHS (366) 433
-TYEARS (367) 432
-PYTHON_INIT (368) 427
-DBG_DEBUG (369) 327
-DBG_QUIT (370) 329 349
-DBG_BREAKPOINT (371) 361 394 398 403
-DBG_WATCH (372) 360 397
-DBG_CONTINUE (373) 331 348
-DBG_HELP (374) 347 348 349 350 351 352 353 354 355 356 357 358 359
-    360 361 362 363
-DBG_PATH (375) 387 389 391
-DBG_PRINT (376) 350 364 367 368 369 370 371 372 373
-DBG_DISPLAY (377) 351 374 377 378 379 380 381 382
-DBG_DESCRIBE (378) 357 414
-DBG_UNDISPLAY (379) 352 385
-DBG_STATE (380) 364 374
-DBG_AGENDA (381) 368 378
-DBG_PLAN (382) 369 379 383
-DBG_NEXT (383) 341 353
-DBG_NEXP (384) 342 354
-DBG_SET (385) 356 386 387 388 389 390 391 392 393
-DBG_VIEWER (386) 386 387
-DBG_DOTPATH (387) 390 391
-DBG_TMPDIR (388) 388 389
-DBG_PLOT (389) 355 383 384
-DBG_CAUSAL (390) 384
-DBG_MEM (391) 343
-DBG_SELECT (392) 344
-DBG_VERBOSE (393) 345 346
-DBG_ON (394) 345
-DBG_OFF (395) 346
-DBG_OPTIONS (396) 370
-DBG_TERMTABLE (397) 371 382
-DBG_PREDICATES (398) 373
-DBG_TASKS (399) 372
-DBG_ENABLE (400) 358 399
-DBG_DISABLE (401) 359 400
-DBG_EVAL (402) 362 408
-DBG_VERBOSITY (403) 392 393
-DBG_APPLY (404) 363 411
+    $end (0) 0
+    error (256) 21 23 26 30 55 63 74 77 98 328
+    LEFTPAR (258) 4 5 22 24 25 27 48 49 61 69 73 76 83 87 101 103 105 106 107 108 109 110 111 113 114 115 116 117 118 119 120 121 122 126 127 128 129 135 137 141 143 146 148 150 152 159 160 165 166 169 171 172 173 175 180 183 184 185 188 191 194 204 206 208 222 230 231 245 247 250 252 254 257 258 263 264 269 286 287 289 291 292 297 298 300 302 306 310 311 322 416 417 422 423 424 425 426 427
+    RIGHTPAR (259) 4 20 22 24 25 27 48 49 61 69 73 76 83 87 101 103 105 106 107 108 109 110 111 113 114 115 116 117 118 119 120 121 122 126 127 128 129 135 137 141 143 146 148 150 152 159 160 165 166 169 171 172 173 175 180 183 184 185 188 191 194 204 206 208 222 230 231 245 247 250 252 254 257 258 263 264 269 286 287 289 291 292 297 298 300 302 306 310 311 322 416 417 422 423 424 425 426 427
+    PDDL_DEFINE (260) 4 5
+    PDDL_DOMAIN (261) 22
+    PDDL_DOMAINREF (262) 25
+    PDDL_PROBLEM (263) 24
+    PDDL_CONSTANTS (264) 49
+    PDDL_NAME <type_string> (265) 47 59 60 64 65 141 405
+    PDDL_VAR <type_string> (266) 217
+    PYTHON_CODE <type_string> (267) 91
+    PDDL_NUMBER <type_number> (268) 215
+    PDDL_DNUMBER <type_number> (269) 216 344 381 385 393 398 399 400 424 425 426
+    PDDL_REQUIREMENTS (270) 27
+    PDDL_TYPES (271) 48
+    PDDL_HYPHEN (272) 54 58 82 89 213 237
+    PDDL_EITHER (273) 61
+    PDDL_STRIPS (274) 31
+    PDDL_TYPING (275) 32
+    PDDL_NEGATIVE_PRECONDITIONS (276) 33
+    PDDL_DISJUNCTIVE_PRECONDITIONS (277) 34
+    PDDL_EQUALITY (278) 35
+    PDDL_EXISTENTIAL_PRECONDITIONS (279) 36
+    PDDL_UNIVERSAL_PRECONDITIONS (280) 37
+    PDDL_QUANTIFIED_PRECONDITIONS (281) 38
+    PDDL_CONDITIONAL_EFFECTS (282) 39
+    PDDL_FLUENTS (283) 40
+    PDDL_ADL (284) 41
+    PDDL_DURATIVE_ACTIONS (285) 42
+    PDDL_DERIVED_PREDICATES (286) 43
+    PDDL_TIMED_INITIAL_LITERALS (287) 44
+    PDDL_PREDICATES (288) 69
+    PDDL_FUNCTIONS (289) 83
+    PDDL_ACTION (290) 101
+    PDDL_PARAMETERS (291) 101 103 306
+    PDDL_NOT (292) 184 264 300
+    PDDL_PRECONDITION (293) 164
+    PDDL_IMPLY (294) 185
+    PDDL_AND (295) 105 180 252 269 292 310 314
+    PDDL_OR (296) 183
+    PDDL_EXISTS (297) 188
+    PDDL_FORALL (298) 191 257
+    PLUS (299) 240
+    DIVIDE (300) 242
+    MULTIPLY (301) 241
+    POW (302) 243
+    ABS (303) 238
+    SQRT (304) 239
+    GREATHER (305) 111 117 122 157 158 223
+    LESS (306) 110 116 121 157 158 224
+    EQUAL (307) 107 113 118 225 289 387 389 391 393 422 423 424 425 426
+    DISTINCT (308) 228
+    GREATHER_EQUAL (309) 109 115 120 226
+    LESS_EQUAL (310) 108 114 119 227
+    PDDL_EFFECT (311) 249 306
+    PDDL_ASSIGN (312) 271
+    PDDL_SCALE_UP (313) 272
+    PDDL_SCALE_DOWN (314) 273
+    PDDL_INCREASE (315) 274
+    PDDL_DECREASE (316) 275
+    PDDL_WHEN (317) 258
+    PDDL_GOAL (318) 297
+    PDDL_AT (319) 320
+    PDDL_ATSTART (320) 315
+    PDDL_ATEND (321) 316
+    PDDL_BETWEEN (322) 292 314
+    PDDL_OBJECT (323) 286
+    PDDL_INIT (324) 287
+    PDDL_OVERALL (325) 313
+    PDDL_DURATIONVAR <type_string> (326) 107 108 109 110 111 218
+    STARTVAR <type_string> (327) 113 114 115 116 117 219
+    ENDVAR <type_string> (328) 118 119 120 121 122 220
+    PDDL_DERIVED (329) 322
+    PDDL_CONDITION (330) 306
+    PDDL_DURATION (331) 306
+    PDDL_DURATIVE_ACTION (332) 306
+    HTN_EXPANSION (333) 46
+    META_TAGS (334) 45
+    META (335) 137
+    TAG (336) 141
+    HTN_TASK (337) 103
+    HTN_TASKS (338) 135 298
+    HTN_ACHIEVE (339) 143
+    HTN_METHOD (340) 135
+    HTN_TASKSGOAL (341) 298
+    HTN_INLINE (342) 146
+    HTN_INLINECUT (343) 148
+    HTN_TEXT <type_string> (344) 141 173 423
+    LEFTBRAC (345) 161 162
+    RIGHTBRAC (346) 161 162
+    EXCLAMATION (347) 126 127 128 156 166
+    RANDOM (348) 127 128 129
+    SORTBY (349) 169
+    ASC (350) 196
+    DESC (351) 197
+    PDDL_BIND (352) 171
+    MAINTAIN (353) 204
+    PPRINT (354) 172 173 175
+    PDDL_AND_EVERY (355) 293
+    CUSTOMIZATION (356) 417
+    TIMEUNIT (357) 422
+    TIMESTART (358) 426
+    TIMEFORMAT (359) 423
+    TIMEHORIZON (360) 424
+    RELTIMEHORIZON (361) 425
+    THOURS (362) 428
+    TMINUTES (363) 429
+    TSECONDS (364) 430
+    TDAYS (365) 431
+    TMONTHS (366) 433
+    TYEARS (367) 432
+    PYTHON_INIT (368) 427
+    DBG_DEBUG (369) 327
+    DBG_QUIT (370) 329 349
+    DBG_BREAKPOINT (371) 361 394 398 403
+    DBG_WATCH (372) 360 397
+    DBG_CONTINUE (373) 331 348
+    DBG_HELP (374) 347 348 349 350 351 352 353 354 355 356 357 358 359 360 361 362 363
+    DBG_PATH <type_string> (375) 387 389 391
+    DBG_PRINT (376) 350 364 367 368 369 370 371 372 373
+    DBG_DISPLAY (377) 351 374 377 378 379 380 381 382
+    DBG_DESCRIBE (378) 357 414
+    DBG_UNDISPLAY (379) 352 385
+    DBG_STATE (380) 364 374
+    DBG_AGENDA (381) 368 378
+    DBG_PLAN (382) 369 379 383
+    DBG_NEXT (383) 341 353
+    DBG_NEXP (384) 342 354
+    DBG_SET (385) 356 386 387 388 389 390 391 392 393
+    DBG_VIEWER (386) 386 387
+    DBG_DOTPATH (387) 390 391
+    DBG_TMPDIR (388) 388 389
+    DBG_PLOT (389) 355 383 384
+    DBG_CAUSAL (390) 384
+    DBG_MEM (391) 343
+    DBG_SELECT (392) 344
+    DBG_VERBOSE (393) 345 346
+    DBG_ON (394) 345
+    DBG_OFF (395) 346
+    DBG_OPTIONS (396) 370
+    DBG_TERMTABLE (397) 371 382
+    DBG_PREDICATES (398) 373
+    DBG_TASKS (399) 372
+    DBG_ENABLE (400) 358 399
+    DBG_DISABLE (401) 359 400
+    DBG_EVAL (402) 362 408
+    DBG_VERBOSITY (403) 392 393
+    DBG_APPLY (404) 363 411
 
 
 Nonterminals, with rules where they appear
 
-$accept (150)
-    on left: 0
-pddl_root (151)
-    on left: 1 2 3, on right: 0
-problem_definition (152)
-    on left: 4, on right: 2
-domain_definition (153)
-    on left: 5, on right: 1
-domain_definition_2 (154)
-    on left: 6 7, on right: 5
-domain_definition_31 (155)
-    on left: 8 9, on right: 6 7
-domain_definition_32 (156)
-    on left: 10 11, on right: 8 9
-domain_definition_3 (157)
-    on left: 12 13, on right: 10 11
-domain_definition_4 (158)
-    on left: 14 15, on right: 12 13
-domain_definition_5 (159)
-    on left: 16 17, on right: 14 15
-domain_definition_6 (160)
-    on left: 18 19, on right: 16 17
-domain_definition_7 (161)
-    on left: 20 21, on right: 18 19
-domainName (162)
-    on left: 22 23, on right: 5
-problemName (163)
-    on left: 24, on right: 4
-domainRef (164)
-    on left: 25 26, on right: 4
-require_def (165)
-    on left: 27, on right: 6 276
-require_key_list (166)
-    on left: 28 29 30, on right: 27 29
-require_key (167)
-    on left: 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46, on right:
-    27 29
-term_name (168)
-    on left: 47, on right: 22 24 25 66 73 76 87 101 103 135 150 206
-    208 211 234 245 247 302 306 416
-types_def (169)
-    on left: 48, on right: 12
-constants_def (170)
-    on left: 49, on right: 14
-typed_list (171)
-    on left: 50 51 54 55, on right: 48 54
-$@1 (172)
-    on left: 52, on right: 54
-$@2 (173)
-    on left: 53, on right: 54
-constant_list (174)
-    on left: 56 57 58, on right: 49 58 286
-constant_def_list (175)
-    on left: 59 60, on right: 57 58 60
-type (176)
-    on left: 61 62 63, on right: 54 58 82 89 213
-type_def_list (177)
-    on left: 64 65, on right: 51 54 65
-type_ref (178)
-    on left: 66, on right: 62 67 68
-type_ref_list (179)
-    on left: 67 68, on right: 61 68
-predicates_def (180)
-    on left: 69, on right: 16
-atomic_formula_skeleton_list (181)
-    on left: 70 71, on right: 69 71
-atomic_formula_skeleton (182)
-    on left: 73 74, on right: 70 71
-$@3 (183)
-    on left: 72, on right: 73
-derived_formula_skeleton (184)
-    on left: 76 77, on right: 323 324
-$@4 (185)
-    on left: 75, on right: 76
-variable_typed_list (186)
-    on left: 79, on right: 73 76 87 101 103 188 191 257 306
-$@5 (187)
-    on left: 78, on right: 79
-var_typel (188)
-    on left: 80 81 82, on right: 79 81 82
-functions_def (189)
-    on left: 83, on right: 18
-function_typed_list (190)
-    on left: 84 85, on right: 83 85
-function_def (191)
-    on left: 87, on right: 85
-$@6 (192)
-    on left: 86, on right: 87
-opt_type (193)
-    on left: 88 89, on right: 87
-code (194)
-    on left: 90 91, on right: 87 324 427
-structure_def_list (195)
-    on left: 92 93, on right: 20 93
-structure_def (196)
-    on left: 94 95 96 97 98, on right: 93
-action_def (197)
-    on left: 101, on right: 94
-@7 (198)
-    on left: 99, on right: 101
-$@8 (199)
-    on left: 100, on right: 101
-htn_task_def (200)
-    on left: 103, on right: 97
-$@9 (201)
-    on left: 102, on right: 103
-duration_constraints (202)
-    on left: 104 105 106, on right: 157 159 161
-sdur_constraint (203)
-    on left: 107 108 109 110 111, on right: 112 307 308 309
-simple_duration_constraint (204)
-    on left: 112 113 114 115 116 117 118 119 120 121 122, on right:
-    104 123 124
-sduration_constraint_list (205)
-    on left: 123 124, on right: 105 124
-methods_def_body (206)
-    on left: 125 126 127 128 129, on right: 103
-method_list (207)
-    on left: 130 131, on right: 125 126 127 128 129 131
-method_body (208)
-    on left: 135, on right: 130 131
-$@10 (209)
-    on left: 132, on right: 135
-$@11 (210)
-    on left: 133, on right: 135
-@12 (211)
-    on left: 134, on right: 135
-meta_list (212)
-    on left: 136 137, on right: 101 103 135 298 306
-tag_list (213)
-    on left: 138 139, on right: 137 139
-tag_element (214)
-    on left: 141, on right: 139
-@13 (215)
-    on left: 140, on right: 141
-task_def (216)
-    on left: 142 143 144, on right: 155 156
-inlinetask (217)
-    on left: 146 148, on right: 144
-@14 (218)
-    on left: 145, on right: 146
-@15 (219)
-    on left: 147, on right: 148
-atomic_task_formula (220)
-    on left: 150, on right: 142
-$@16 (221)
-    on left: 149, on right: 150
-task_network (222)
-    on left: 151 152, on right: 135 298
-task_list (223)
-    on left: 153 154, on right: 153 157 158 159 160 161 162
-task_element (224)
-    on left: 155 156 157 158 159 160 161 162, on right: 151 153 154
-preconditions_def (225)
-    on left: 163 164, on right: 101 135
-goal_def (226)
-    on left: 165 166 169 171 172 173 175 176 177, on right: 143 146
-    148 164 166 169 184 185 188 191 202 258 297 306 323 397 408
-@17 (227)
-    on left: 167, on right: 169
-$@18 (228)
-    on left: 168, on right: 169
-@19 (229)
-    on left: 170, on right: 171
-@20 (230)
-    on left: 174, on right: 175
-simple_goal_def (231)
-    on left: 180 183 184 185 188 191 192 193, on right: 172 176 194
-@21 (232)
-    on left: 178, on right: 180
-$@22 (233)
-    on left: 179, on right: 180
-@23 (234)
-    on left: 181, on right: 183
-$@24 (235)
-    on left: 182, on right: 183
-@25 (236)
-    on left: 186, on right: 188
-$@26 (237)
-    on left: 187, on right: 188
-@27 (238)
-    on left: 189, on right: 191
-$@28 (239)
-    on left: 190, on right: 191
-timed_goal (240)
-    on left: 194, on right: 177
-order (241)
-    on left: 195 196 197, on right: 200
-v_list (242)
-    on left: 198 199, on right: 169 199
-v_crit (243)
-    on left: 200, on right: 198 199
-goal_def_list (244)
-    on left: 201 202, on right: 180 183 202
-atomic_formula_term_effect (245)
-    on left: 203 204, on right: 264 265
-literal_effect (246)
-    on left: 206, on right: 203 204
-$@29 (247)
-    on left: 205, on right: 206
-atomic_formula_term_goal (248)
-    on left: 208, on right: 193
-$@30 (249)
-    on left: 207, on right: 208
-term_list (250)
-    on left: 209 210, on right: 150 175 206 208 210 245 247 302 416
-term (251)
-    on left: 211 212 213 214, on right: 210
-number (252)
-    on left: 215 216, on right: 214 229 289 292 293
-var (253)
-    on left: 217 218 219 220, on right: 221
-variable (254)
-    on left: 221, on right: 81 171 200 212 213 233
-f_comp (255)
-    on left: 222, on right: 192
-binary_comp (256)
-    on left: 223 224 225 226 227 228, on right: 222
-fluent_exp (257)
-    on left: 229 230 231 232 233 234, on right: 107 108 109 110 111
-    113 114 115 116 117 118 119 120 121 122 171 222 230 231 236 263
-    320
-silly_exp (258)
-    on left: 235 236, on right: 231
-unary_op (259)
-    on left: 237 238 239, on right: 231
-binary_op (260)
-    on left: 240 241 242 243, on right: 230
-f_head (261)
-    on left: 245, on right: 289
-$@31 (262)
-    on left: 244, on right: 245
-f_head_ref (263)
-    on left: 247, on right: 232 263
-$@32 (264)
-    on left: 246, on right: 247
-effect_def (265)
-    on left: 248 249, on right: 101
-effect (266)
-    on left: 250 252 253, on right: 146 148 249 257 306 411
-$@33 (267)
-    on left: 251, on right: 252
-timed_effect (268)
-    on left: 254, on right: 260
-c_effect (269)
-    on left: 257 258 259 260, on right: 253 262
-@34 (270)
-    on left: 255, on right: 257
-$@35 (271)
-    on left: 256, on right: 257
-c_effect_list (272)
-    on left: 261 262, on right: 252 262
-p_effect (273)
-    on left: 263 264 265, on right: 254 259 267 270
-p_effect_list (274)
-    on left: 266 267, on right: 267 269
-cond_effect (275)
-    on left: 269 270, on right: 258
-$@36 (276)
-    on left: 268, on right: 269
-assign_op (277)
-    on left: 271 272 273 274 275, on right: 263
-problemBody (278)
-    on left: 276 277, on right: 4
-problemBody21 (279)
-    on left: 278 279, on right: 276 277
-problemBody22 (280)
-    on left: 280 281, on right: 278 279
-problemBody2 (281)
-    on left: 282 283, on right: 280 281
-problemBody3 (282)
-    on left: 285, on right: 282 283
-$@37 (283)
-    on left: 284, on right: 285
-object_declaration (284)
-    on left: 286, on right: 282
-init (285)
-    on left: 287, on right: 285
-init_el (286)
-    on left: 288 289 291 292, on right: 296
-$@38 (287)
-    on left: 290, on right: 291
-optional_repetition (288)
-    on left: 293 294, on right: 292
-init_el_list (289)
-    on left: 295 296, on right: 287 296
-goal (290)
-    on left: 297 298, on right: 285
-literal_name (291)
-    on left: 299 300, on right: 288 291 292
-atomic_formula_name (292)
-    on left: 302, on right: 299 300
-$@39 (293)
-    on left: 301, on right: 302
-durative_action_def (294)
-    on left: 306, on right: 95
-@40 (295)
-    on left: 303, on right: 306
-$@41 (296)
-    on left: 304, on right: 306
-$@42 (297)
-    on left: 305, on right: 306
-sdur_constraint_list (298)
-    on left: 307 308, on right: 308 310
-pduration_constraints (299)
-    on left: 309 310 311, on right: 306
-time_specifier (300)
-    on left: 312 313 314, on right: 194
-time_point (301)
-    on left: 315 316 317, on right: 254 312 314
-number_time_point (302)
-    on left: 320, on right: 291 317
-$@43 (303)
-    on left: 318, on right: 320
-$@44 (304)
-    on left: 319, on right: 320
-derived_def (305)
-    on left: 322, on right: 96
-$@45 (306)
-    on left: 321, on right: 322
-derived_body (307)
-    on left: 323 324, on right: 322
-debug_sentence (308)
-    on left: 327 328, on right: 3
-$@46 (309)
-    on left: 325, on right: 327
-$@47 (310)
-    on left: 326, on right: 327
-command (311)
-    on left: 329 330 331 332 333 334 335 336 337 338 339 340 341 342
-    343 344 345 346, on right: 327
-help (312)
-    on left: 347 348 349 350 351 352 353 354 355 356 357 358 359 360
-    361 362 363, on right: 330
-print (313)
-    on left: 364 367 368 369 370 371 372 373, on right: 332
-$@48 (314)
-    on left: 365, on right: 367
-$@49 (315)
-    on left: 366, on right: 367
-display (316)
-    on left: 374 377 378 379 380 381 382, on right: 333
-$@50 (317)
-    on left: 375, on right: 377
-$@51 (318)
-    on left: 376, on right: 377
-plot (319)
-    on left: 383 384, on right: 335
-undisplay (320)
-    on left: 385, on right: 334
-set (321)
-    on left: 386 387 388 389 390 391 392 393, on right: 336
-breakpoint (322)
-    on left: 394 397 398 399 400 403, on right: 337
-$@52 (323)
-    on left: 395, on right: 397
-$@53 (324)
-    on left: 396, on right: 397
-$@54 (325)
-    on left: 401, on right: 403
-$@55 (326)
-    on left: 402, on right: 403
-met_name (327)
-    on left: 404 405, on right: 403
-eval (328)
-    on left: 408, on right: 339
-$@56 (329)
-    on left: 406, on right: 408
-$@57 (330)
-    on left: 407, on right: 408
-apply (331)
-    on left: 411, on right: 340
-$@58 (332)
-    on left: 409, on right: 411
-$@59 (333)
-    on left: 410, on right: 411
-describe (334)
-    on left: 414, on right: 338
-$@60 (335)
-    on left: 412, on right: 414
-$@61 (336)
-    on left: 413, on right: 414
-simple_formula_term_goal (337)
-    on left: 416, on right: 367 377 403 414
-$@62 (338)
-    on left: 415, on right: 416
-customization_def (339)
-    on left: 417, on right: 8 278
-customization_body (340)
-    on left: 418 419, on right: 417
-customization_list (341)
-    on left: 420 421, on right: 419 421
-customization_element (342)
-    on left: 422 423 424 425 426, on right: 420 421
-python_init (343)
-    on left: 427, on right: 10 280
-time_unit (344)
-    on left: 428 429 430 431 432 433, on right: 422
+    $accept (150)
+        on left: 0
+    pddl_root (151)
+        on left: 1 2 3
+        on right: 0
+    problem_definition (152)
+        on left: 4
+        on right: 2
+    domain_definition (153)
+        on left: 5
+        on right: 1
+    domain_definition_2 (154)
+        on left: 6 7
+        on right: 5
+    domain_definition_31 (155)
+        on left: 8 9
+        on right: 6 7
+    domain_definition_32 (156)
+        on left: 10 11
+        on right: 8 9
+    domain_definition_3 (157)
+        on left: 12 13
+        on right: 10 11
+    domain_definition_4 (158)
+        on left: 14 15
+        on right: 12 13
+    domain_definition_5 (159)
+        on left: 16 17
+        on right: 14 15
+    domain_definition_6 (160)
+        on left: 18 19
+        on right: 16 17
+    domain_definition_7 (161)
+        on left: 20 21
+        on right: 18 19
+    domainName (162)
+        on left: 22 23
+        on right: 5
+    problemName (163)
+        on left: 24
+        on right: 4
+    domainRef (164)
+        on left: 25 26
+        on right: 4
+    require_def (165)
+        on left: 27
+        on right: 6 276
+    require_key_list (166)
+        on left: 28 29 30
+        on right: 27 29
+    require_key (167)
+        on left: 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46
+        on right: 27 29
+    term_name <otype> (168)
+        on left: 47
+        on right: 22 24 25 66 73 76 87 101 103 135 150 206 208 211 234 245 247 302 306 416
+    types_def (169)
+        on left: 48
+        on right: 12
+    constants_def (170)
+        on left: 49
+        on right: 14
+    typed_list <otype> (171)
+        on left: 50 51 54 55
+        on right: 48 54
+    $@1 (172)
+        on left: 52
+        on right: 54
+    $@2 (173)
+        on left: 53
+        on right: 54
+    constant_list (174)
+        on left: 56 57 58
+        on right: 49 58 286
+    constant_def_list <otype> (175)
+        on left: 59 60
+        on right: 57 58 60
+    type <otype> (176)
+        on left: 61 62 63
+        on right: 54 58 82 89 213
+    type_def_list <otype> (177)
+        on left: 64 65
+        on right: 51 54 65
+    type_ref <otype> (178)
+        on left: 66
+        on right: 62 67 68
+    type_ref_list <otype> (179)
+        on left: 67 68
+        on right: 61 68
+    predicates_def (180)
+        on left: 69
+        on right: 16
+    atomic_formula_skeleton_list (181)
+        on left: 70 71
+        on right: 69 71
+    atomic_formula_skeleton (182)
+        on left: 73 74
+        on right: 70 71
+    $@3 (183)
+        on left: 72
+        on right: 73
+    derived_formula_skeleton <otype> (184)
+        on left: 76 77
+        on right: 323 324
+    $@4 (185)
+        on left: 75
+        on right: 76
+    variable_typed_list (186)
+        on left: 79
+        on right: 73 76 87 101 103 188 191 257 306
+    $@5 (187)
+        on left: 78
+        on right: 79
+    var_typel (188)
+        on left: 80 81 82
+        on right: 79 81 82
+    functions_def (189)
+        on left: 83
+        on right: 18
+    function_typed_list (190)
+        on left: 84 85
+        on right: 83 85
+    function_def (191)
+        on left: 87
+        on right: 85
+    $@6 (192)
+        on left: 86
+        on right: 87
+    opt_type <otype> (193)
+        on left: 88 89
+        on right: 87
+    code <type_string> (194)
+        on left: 90 91
+        on right: 87 324 427
+    structure_def_list (195)
+        on left: 92 93
+        on right: 20 93
+    structure_def (196)
+        on left: 94 95 96 97 98
+        on right: 93
+    action_def <otype> (197)
+        on left: 101
+        on right: 94
+    @7 (198)
+        on left: 99
+        on right: 101
+    $@8 (199)
+        on left: 100
+        on right: 101
+    htn_task_def <otype> (200)
+        on left: 103
+        on right: 97
+    $@9 (201)
+        on left: 102
+        on right: 103
+    duration_constraints <otype> (202)
+        on left: 104 105 106
+        on right: 157 159 161
+    sdur_constraint <otype> (203)
+        on left: 107 108 109 110 111
+        on right: 112 307 308 309
+    simple_duration_constraint <otype> (204)
+        on left: 112 113 114 115 116 117 118 119 120 121 122
+        on right: 104 123 124
+    sduration_constraint_list <otype> (205)
+        on left: 123 124
+        on right: 105 124
+    methods_def_body (206)
+        on left: 125 126 127 128 129
+        on right: 103
+    method_list (207)
+        on left: 130 131
+        on right: 125 126 127 128 129 131
+    method_body <otype> (208)
+        on left: 135
+        on right: 130 131
+    $@10 (209)
+        on left: 132
+        on right: 135
+    $@11 (210)
+        on left: 133
+        on right: 135
+    @12 (211)
+        on left: 134
+        on right: 135
+    meta_list <otype> (212)
+        on left: 136 137
+        on right: 101 103 135 298 306
+    tag_list <otype> (213)
+        on left: 138 139
+        on right: 137 139
+    tag_element <otype> (214)
+        on left: 141
+        on right: 139
+    @13 (215)
+        on left: 140
+        on right: 141
+    task_def <otype> (216)
+        on left: 142 143 144
+        on right: 155 156
+    inlinetask <otype> (217)
+        on left: 146 148
+        on right: 144
+    @14 (218)
+        on left: 145
+        on right: 146
+    @15 (219)
+        on left: 147
+        on right: 148
+    atomic_task_formula <otype> (220)
+        on left: 150
+        on right: 142
+    $@16 (221)
+        on left: 149
+        on right: 150
+    task_network <otype> (222)
+        on left: 151 152
+        on right: 135 298
+    task_list <otype> (223)
+        on left: 153 154
+        on right: 153 157 158 159 160 161 162
+    task_element <otype> (224)
+        on left: 155 156 157 158 159 160 161 162
+        on right: 151 153 154
+    preconditions_def <otype> (225)
+        on left: 163 164
+        on right: 101 135
+    goal_def <otype> (226)
+        on left: 165 166 169 171 172 173 175 176 177
+        on right: 143 146 148 164 166 169 184 185 188 191 202 258 297 306 323 397 408
+    @17 (227)
+        on left: 167
+        on right: 169
+    $@18 (228)
+        on left: 168
+        on right: 169
+    @19 (229)
+        on left: 170
+        on right: 171
+    @20 (230)
+        on left: 174
+        on right: 175
+    simple_goal_def <otype> (231)
+        on left: 180 183 184 185 188 191 192 193
+        on right: 172 176 194
+    @21 (232)
+        on left: 178
+        on right: 180
+    $@22 (233)
+        on left: 179
+        on right: 180
+    @23 (234)
+        on left: 181
+        on right: 183
+    $@24 (235)
+        on left: 182
+        on right: 183
+    @25 (236)
+        on left: 186
+        on right: 188
+    $@26 (237)
+        on left: 187
+        on right: 188
+    @27 (238)
+        on left: 189
+        on right: 191
+    $@28 (239)
+        on left: 190
+        on right: 191
+    timed_goal <otype> (240)
+        on left: 194
+        on right: 177
+    order <type_int> (241)
+        on left: 195 196 197
+        on right: 200
+    v_list (242)
+        on left: 198 199
+        on right: 169 199
+    v_crit (243)
+        on left: 200
+        on right: 198 199
+    goal_def_list (244)
+        on left: 201 202
+        on right: 180 183 202
+    atomic_formula_term_effect <otype> (245)
+        on left: 203 204
+        on right: 264 265
+    literal_effect <otype> (246)
+        on left: 206
+        on right: 203 204
+    $@29 (247)
+        on left: 205
+        on right: 206
+    atomic_formula_term_goal <otype> (248)
+        on left: 208
+        on right: 193
+    $@30 (249)
+        on left: 207
+        on right: 208
+    term_list (250)
+        on left: 209 210
+        on right: 150 175 206 208 210 245 247 302 416
+    term (251)
+        on left: 211 212 213 214
+        on right: 210
+    number <type_number> (252)
+        on left: 215 216
+        on right: 214 229 289 292 293
+    var <type_string> (253)
+        on left: 217 218 219 220
+        on right: 221
+    variable <termtype> (254)
+        on left: 221
+        on right: 81 171 200 212 213 233
+    f_comp <otype> (255)
+        on left: 222
+        on right: 192
+    binary_comp <otype> (256)
+        on left: 223 224 225 226 227 228
+        on right: 222
+    fluent_exp <otype> (257)
+        on left: 229 230 231 232 233 234
+        on right: 107 108 109 110 111 113 114 115 116 117 118 119 120 121 122 171 222 230 231 236 263 320
+    silly_exp <otype> (258)
+        on left: 235 236
+        on right: 231
+    unary_op <type_int> (259)
+        on left: 237 238 239
+        on right: 231
+    binary_op <otype> (260)
+        on left: 240 241 242 243
+        on right: 230
+    f_head <otype> (261)
+        on left: 245
+        on right: 289
+    $@31 (262)
+        on left: 244
+        on right: 245
+    f_head_ref <otype> (263)
+        on left: 247
+        on right: 232 263
+    $@32 (264)
+        on left: 246
+        on right: 247
+    effect_def <otype> (265)
+        on left: 248 249
+        on right: 101
+    effect <otype> (266)
+        on left: 250 252 253
+        on right: 146 148 249 257 306 411
+    $@33 (267)
+        on left: 251
+        on right: 252
+    timed_effect <otype> (268)
+        on left: 254
+        on right: 260
+    c_effect <otype> (269)
+        on left: 257 258 259 260
+        on right: 253 262
+    @34 (270)
+        on left: 255
+        on right: 257
+    $@35 (271)
+        on left: 256
+        on right: 257
+    c_effect_list (272)
+        on left: 261 262
+        on right: 252 262
+    p_effect <otype> (273)
+        on left: 263 264 265
+        on right: 254 259 267 270
+    p_effect_list (274)
+        on left: 266 267
+        on right: 267 269
+    cond_effect <otype> (275)
+        on left: 269 270
+        on right: 258
+    $@36 (276)
+        on left: 268
+        on right: 269
+    assign_op <type_int> (277)
+        on left: 271 272 273 274 275
+        on right: 263
+    problemBody (278)
+        on left: 276 277
+        on right: 4
+    problemBody21 (279)
+        on left: 278 279
+        on right: 276 277
+    problemBody22 (280)
+        on left: 280 281
+        on right: 278 279
+    problemBody2 (281)
+        on left: 282 283
+        on right: 280 281
+    problemBody3 (282)
+        on left: 285
+        on right: 282 283
+    $@37 (283)
+        on left: 284
+        on right: 285
+    object_declaration (284)
+        on left: 286
+        on right: 282
+    init (285)
+        on left: 287
+        on right: 285
+    init_el <otype> (286)
+        on left: 288 289 291 292
+        on right: 296
+    $@38 (287)
+        on left: 290
+        on right: 291
+    optional_repetition <type_number> (288)
+        on left: 293 294
+        on right: 292
+    init_el_list (289)
+        on left: 295 296
+        on right: 287 296
+    goal (290)
+        on left: 297 298
+        on right: 285
+    literal_name <otype> (291)
+        on left: 299 300
+        on right: 288 291 292
+    atomic_formula_name <otype> (292)
+        on left: 302
+        on right: 299 300
+    $@39 (293)
+        on left: 301
+        on right: 302
+    durative_action_def <otype> (294)
+        on left: 306
+        on right: 95
+    @40 (295)
+        on left: 303
+        on right: 306
+    $@41 (296)
+        on left: 304
+        on right: 306
+    $@42 (297)
+        on left: 305
+        on right: 306
+    sdur_constraint_list <otype> (298)
+        on left: 307 308
+        on right: 308 310
+    pduration_constraints <otype> (299)
+        on left: 309 310 311
+        on right: 306
+    time_specifier <otype> (300)
+        on left: 312 313 314
+        on right: 194
+    time_point <otype> (301)
+        on left: 315 316 317
+        on right: 254 312 314
+    number_time_point <otype> (302)
+        on left: 320
+        on right: 291 317
+    $@43 (303)
+        on left: 318
+        on right: 320
+    $@44 (304)
+        on left: 319
+        on right: 320
+    derived_def (305)
+        on left: 322
+        on right: 96
+    $@45 (306)
+        on left: 321
+        on right: 322
+    derived_body (307)
+        on left: 323 324
+        on right: 322
+    debug_sentence (308)
+        on left: 327 328
+        on right: 3
+    $@46 (309)
+        on left: 325
+        on right: 327
+    $@47 (310)
+        on left: 326
+        on right: 327
+    command (311)
+        on left: 329 330 331 332 333 334 335 336 337 338 339 340 341 342 343 344 345 346
+        on right: 327
+    help (312)
+        on left: 347 348 349 350 351 352 353 354 355 356 357 358 359 360 361 362 363
+        on right: 330
+    print (313)
+        on left: 364 367 368 369 370 371 372 373
+        on right: 332
+    $@48 (314)
+        on left: 365
+        on right: 367
+    $@49 (315)
+        on left: 366
+        on right: 367
+    display (316)
+        on left: 374 377 378 379 380 381 382
+        on right: 333
+    $@50 (317)
+        on left: 375
+        on right: 377
+    $@51 (318)
+        on left: 376
+        on right: 377
+    plot (319)
+        on left: 383 384
+        on right: 335
+    undisplay (320)
+        on left: 385
+        on right: 334
+    set (321)
+        on left: 386 387 388 389 390 391 392 393
+        on right: 336
+    breakpoint (322)
+        on left: 394 397 398 399 400 403
+        on right: 337
+    $@52 (323)
+        on left: 395
+        on right: 397
+    $@53 (324)
+        on left: 396
+        on right: 397
+    $@54 (325)
+        on left: 401
+        on right: 403
+    $@55 (326)
+        on left: 402
+        on right: 403
+    met_name <otype> (327)
+        on left: 404 405
+        on right: 403
+    eval (328)
+        on left: 408
+        on right: 339
+    $@56 (329)
+        on left: 406
+        on right: 408
+    $@57 (330)
+        on left: 407
+        on right: 408
+    apply (331)
+        on left: 411
+        on right: 340
+    $@58 (332)
+        on left: 409
+        on right: 411
+    $@59 (333)
+        on left: 410
+        on right: 411
+    describe (334)
+        on left: 414
+        on right: 338
+    $@60 (335)
+        on left: 412
+        on right: 414
+    $@61 (336)
+        on left: 413
+        on right: 414
+    simple_formula_term_goal <otype> (337)
+        on left: 416
+        on right: 367 377 403 414
+    $@62 (338)
+        on left: 415
+        on right: 416
+    customization_def (339)
+        on left: 417
+        on right: 8 278
+    customization_body (340)
+        on left: 418 419
+        on right: 417
+    customization_list (341)
+        on left: 420 421
+        on right: 419 421
+    customization_element (342)
+        on left: 422 423 424 425 426
+        on right: 420 421
+    python_init (343)
+        on left: 427
+        on right: 10 280
+    time_unit <type_number> (344)
+        on left: 428 429 430 431 432 433
+        on right: 422
 
 
 State 0
@@ -2489,7 +2663,7 @@ State 127
     PDDL_STRIPS                     shift, and go to state 194
     PDDL_TYPING                     shift, and go to state 195
     PDDL_NEGATIVE_PRECONDITIONS     shift, and go to state 196
-    PDDL_DISJUNCTIVE_PRECONDITIONS   shift, and go to state 197
+    PDDL_DISJUNCTIVE_PRECONDITIONS  shift, and go to state 197
     PDDL_EQUALITY                   shift, and go to state 198
     PDDL_EXISTENTIAL_PRECONDITIONS  shift, and go to state 199
     PDDL_UNIVERSAL_PRECONDITIONS    shift, and go to state 200
@@ -3335,7 +3509,7 @@ State 210
     PDDL_STRIPS                     shift, and go to state 194
     PDDL_TYPING                     shift, and go to state 195
     PDDL_NEGATIVE_PRECONDITIONS     shift, and go to state 196
-    PDDL_DISJUNCTIVE_PRECONDITIONS   shift, and go to state 197
+    PDDL_DISJUNCTIVE_PRECONDITIONS  shift, and go to state 197
     PDDL_EQUALITY                   shift, and go to state 198
     PDDL_EXISTENTIAL_PRECONDITIONS  shift, and go to state 199
     PDDL_UNIVERSAL_PRECONDITIONS    shift, and go to state 200
@@ -4162,7 +4336,7 @@ State 302
     PDDL_STRIPS                     shift, and go to state 194
     PDDL_TYPING                     shift, and go to state 195
     PDDL_NEGATIVE_PRECONDITIONS     shift, and go to state 196
-    PDDL_DISJUNCTIVE_PRECONDITIONS   shift, and go to state 197
+    PDDL_DISJUNCTIVE_PRECONDITIONS  shift, and go to state 197
     PDDL_EQUALITY                   shift, and go to state 198
     PDDL_EXISTENTIAL_PRECONDITIONS  shift, and go to state 199
     PDDL_UNIVERSAL_PRECONDITIONS    shift, and go to state 200
