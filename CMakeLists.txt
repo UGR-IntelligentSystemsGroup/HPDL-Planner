@@ -8,7 +8,7 @@ include_directories("include")
 file(GLOB SOURCES "src/*.cpp")
 list(REMOVE_ITEM SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/src/tcnm-ac3.cpp" "${CMAKE_CURRENT_SOURCE_DIR}/src/tcnm-pc2.cpp" "${CMAKE_CURRENT_SOURCE_DIR}/src/tcnm-pc2-cl.cpp")
 
-set(EXTRALIBS "-lhistory -ltermcap -ll")
+set(EXTRALIBS "-lhistory;-ltermcap;-ll")
 
 #Set python vars
 #Compiler flags
@@ -175,4 +175,4 @@ list(APPEND SOURCES src/tcnm-ac3.cpp)
 #Add a binary executable
 add_executable(planner nodes/planner.cpp ${BISON_parser_OUTPUTS} ${FLEX_lexer_OUTPUTS} ${SOURCES})
 #And link it
-target_link_libraries(planner python2.7 readline ${EXTRALIBS} ${PYTHON_EXTRA_LIBS})
+target_link_libraries(planner python2.7 readline ${EXTRALIBS}${PYTHON_EXTRA_LIBS})
